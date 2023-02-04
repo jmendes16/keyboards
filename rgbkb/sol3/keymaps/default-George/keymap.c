@@ -147,11 +147,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return true;
     }
 }
-
+/*
 void keyboard_post_init_user(void) {
     rgb_matrix_mode_noeeprom(RGB_MATRIX_MULTISPLASH); // default effect is normally RGB_MATRIX_CYCLE_LEFT_RIGHT
 }
-
+*/
 void render_layer_status(void) {
     // Host Keyboard Layer Status
     oled_write_P(PSTR("Layer"), false);
@@ -179,150 +179,30 @@ void render_layer_status(void) {
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         switch(get_highest_layer(layer_state|default_layer_state)) {
             case _QWERTY:
-                rgb_matrix_set_color(53, 255, 0, 0);
-                rgb_matrix_set_color(54, 255, 0, 0);
-                rgb_matrix_set_color(55, 255, 0, 0);
-                rgb_matrix_set_color(68, 255, 0, 0);
-                rgb_matrix_set_color(67, 255, 0, 0);
-                rgb_matrix_set_color(51, 255, 0, 0);
-                rgb_matrix_set_color(58, 255, 0, 0);
-                rgb_matrix_set_color(65, 255, 0, 0);
-                rgb_matrix_set_color(64, 255, 0, 0);
-                rgb_matrix_set_color(63, 255, 0, 0);
-                rgb_matrix_set_color(60, 255, 0, 0);
-                rgb_matrix_set_color(49, 255, 0, 0);
-                rgb_matrix_set_color(141, 255, 0, 0);
-                rgb_matrix_set_color(138, 255, 0, 0);
-                rgb_matrix_set_color(127, 255, 0, 0);
-                rgb_matrix_set_color(128, 255, 0, 0);
-                rgb_matrix_set_color(129, 255, 0, 0);
-                rgb_matrix_set_color(136, 255, 0, 0);
-                rgb_matrix_set_color(143, 255, 0, 0);
-                rgb_matrix_set_color(130, 255, 0, 0);
-                rgb_matrix_set_color(131, 255, 0, 0);
-                rgb_matrix_set_color(134, 255, 0, 0);
-                rgb_matrix_set_color(145, 255, 0, 0);
-                rgb_matrix_set_color(132, 255, 0, 0);
                 for (uint8_t i = 0; i < 41; i++) {
                     rgb_matrix_set_color(i, 255, 0, 0);
                     rgb_matrix_set_color((i + 78), 255, 0, 0);
                 }
                 break;
             case _COLEMAK:
-                rgb_matrix_set_color(53, 255, 0, 0);
-                rgb_matrix_set_color(54, 255, 0, 0);
-                rgb_matrix_set_color(55, 255, 0, 0);
-                rgb_matrix_set_color(68, 255, 0, 0);
-                rgb_matrix_set_color(67, 255, 0, 0);
-                rgb_matrix_set_color(51, 255, 0, 0);
-                rgb_matrix_set_color(58, 255, 0, 0);
-                rgb_matrix_set_color(65, 255, 0, 0);
-                rgb_matrix_set_color(64, 255, 0, 0);
-                rgb_matrix_set_color(63, 255, 0, 0);
-                rgb_matrix_set_color(60, 255, 0, 0);
-                rgb_matrix_set_color(49, 255, 0, 0);
-                rgb_matrix_set_color(141, 255, 0, 0);
-                rgb_matrix_set_color(138, 255, 0, 0);
-                rgb_matrix_set_color(127, 255, 0, 0);
-                rgb_matrix_set_color(128, 255, 0, 0);
-                rgb_matrix_set_color(129, 255, 0, 0);
-                rgb_matrix_set_color(136, 255, 0, 0);
-                rgb_matrix_set_color(143, 255, 0, 0);
-                rgb_matrix_set_color(130, 255, 0, 0);
-                rgb_matrix_set_color(131, 255, 0, 0);
-                rgb_matrix_set_color(134, 255, 0, 0);
-                rgb_matrix_set_color(145, 255, 0, 0);
-                rgb_matrix_set_color(132, 255, 0, 0);
                 for (uint8_t i = 0; i < 41; i++) {
                     rgb_matrix_set_color(i, 0, 255, 0);
                     rgb_matrix_set_color((i + 78), 0, 255, 0);
                 }
                 break;
             case _GAME:
-                rgb_matrix_set_color(53, 255, 0, 0);
-                rgb_matrix_set_color(54, 255, 0, 0);
-                rgb_matrix_set_color(55, 255, 0, 0);
-                rgb_matrix_set_color(68, 255, 0, 0);
-                rgb_matrix_set_color(67, 255, 0, 0);
-                rgb_matrix_set_color(51, 255, 0, 0);
-                rgb_matrix_set_color(58, 255, 0, 0);
-                rgb_matrix_set_color(65, 255, 0, 0);
-                rgb_matrix_set_color(64, 255, 0, 0);
-                rgb_matrix_set_color(63, 255, 0, 0);
-                rgb_matrix_set_color(60, 255, 0, 0);
-                rgb_matrix_set_color(49, 255, 0, 0);
-                rgb_matrix_set_color(141, 255, 0, 0);
-                rgb_matrix_set_color(138, 255, 0, 0);
-                rgb_matrix_set_color(127, 255, 0, 0);
-                rgb_matrix_set_color(128, 255, 0, 0);
-                rgb_matrix_set_color(129, 255, 0, 0);
-                rgb_matrix_set_color(136, 255, 0, 0);
-                rgb_matrix_set_color(143, 255, 0, 0);
-                rgb_matrix_set_color(130, 255, 0, 0);
-                rgb_matrix_set_color(131, 255, 0, 0);
-                rgb_matrix_set_color(134, 255, 0, 0);
-                rgb_matrix_set_color(145, 255, 0, 0);
-                rgb_matrix_set_color(132, 255, 0, 0);
                 for (uint8_t i = 0; i < 41; i++) {
                     rgb_matrix_set_color(i, 0, 0, 255);
                     rgb_matrix_set_color((i + 78), 0, 0, 255);
                 }
                 break;
             case _FN:
-                rgb_matrix_set_color(53, 255, 0, 0);
-                rgb_matrix_set_color(54, 255, 0, 0);
-                rgb_matrix_set_color(55, 255, 0, 0);
-                rgb_matrix_set_color(68, 255, 0, 0);
-                rgb_matrix_set_color(67, 255, 0, 0);
-                rgb_matrix_set_color(51, 255, 0, 0);
-                rgb_matrix_set_color(58, 255, 0, 0);
-                rgb_matrix_set_color(65, 255, 0, 0);
-                rgb_matrix_set_color(64, 255, 0, 0);
-                rgb_matrix_set_color(63, 255, 0, 0);
-                rgb_matrix_set_color(60, 255, 0, 0);
-                rgb_matrix_set_color(49, 255, 0, 0);
-                rgb_matrix_set_color(141, 255, 0, 0);
-                rgb_matrix_set_color(138, 255, 0, 0);
-                rgb_matrix_set_color(127, 255, 0, 0);
-                rgb_matrix_set_color(128, 255, 0, 0);
-                rgb_matrix_set_color(129, 255, 0, 0);
-                rgb_matrix_set_color(136, 255, 0, 0);
-                rgb_matrix_set_color(143, 255, 0, 0);
-                rgb_matrix_set_color(130, 255, 0, 0);
-                rgb_matrix_set_color(131, 255, 0, 0);
-                rgb_matrix_set_color(134, 255, 0, 0);
-                rgb_matrix_set_color(145, 255, 0, 0);
-                rgb_matrix_set_color(132, 255, 0, 0);
                 for (uint8_t i = 0; i < 41; i++) {
                     rgb_matrix_set_color(i, 255, 255, 0);
                     rgb_matrix_set_color((i + 78), 255, 255, 0);
                 }
                 break;
             case _ADJUST:
-                rgb_matrix_set_color(53, 255, 0, 0);
-                rgb_matrix_set_color(54, 255, 0, 0);
-                rgb_matrix_set_color(55, 255, 0, 0);
-                rgb_matrix_set_color(68, 255, 0, 0);
-                rgb_matrix_set_color(67, 255, 0, 0);
-                rgb_matrix_set_color(51, 255, 0, 0);
-                rgb_matrix_set_color(58, 255, 0, 0);
-                rgb_matrix_set_color(65, 255, 0, 0);
-                rgb_matrix_set_color(64, 255, 0, 0);
-                rgb_matrix_set_color(63, 255, 0, 0);
-                rgb_matrix_set_color(60, 255, 0, 0);
-                rgb_matrix_set_color(49, 255, 0, 0);
-                rgb_matrix_set_color(141, 255, 0, 0);
-                rgb_matrix_set_color(138, 255, 0, 0);
-                rgb_matrix_set_color(127, 255, 0, 0);
-                rgb_matrix_set_color(128, 255, 0, 0);
-                rgb_matrix_set_color(129, 255, 0, 0);
-                rgb_matrix_set_color(136, 255, 0, 0);
-                rgb_matrix_set_color(143, 255, 0, 0);
-                rgb_matrix_set_color(130, 255, 0, 0);
-                rgb_matrix_set_color(131, 255, 0, 0);
-                rgb_matrix_set_color(134, 255, 0, 0);
-                rgb_matrix_set_color(145, 255, 0, 0);
-                rgb_matrix_set_color(132, 255, 0, 0);
                 for (uint8_t i = 0; i < 41; i++) {
                     rgb_matrix_set_color(i, 255, 0, 255);
                     rgb_matrix_set_color((i + 78), 255, 0, 255);
@@ -333,3 +213,30 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         }
     return false;
 }
+
+/*
+                rgb_matrix_set_color(53, 255, 0, 0);
+                rgb_matrix_set_color(54, 255, 0, 0);
+                rgb_matrix_set_color(55, 255, 0, 0);
+                rgb_matrix_set_color(68, 255, 0, 0);
+                rgb_matrix_set_color(67, 255, 0, 0);
+                rgb_matrix_set_color(51, 255, 0, 0);
+                rgb_matrix_set_color(58, 255, 0, 0);
+                rgb_matrix_set_color(65, 255, 0, 0);
+                rgb_matrix_set_color(64, 255, 0, 0);
+                rgb_matrix_set_color(63, 255, 0, 0);
+                rgb_matrix_set_color(60, 255, 0, 0);
+                rgb_matrix_set_color(49, 255, 0, 0);
+                rgb_matrix_set_color(141, 255, 0, 0);
+                rgb_matrix_set_color(138, 255, 0, 0);
+                rgb_matrix_set_color(127, 255, 0, 0);
+                rgb_matrix_set_color(128, 255, 0, 0);
+                rgb_matrix_set_color(129, 255, 0, 0);
+                rgb_matrix_set_color(136, 255, 0, 0);
+                rgb_matrix_set_color(143, 255, 0, 0);
+                rgb_matrix_set_color(130, 255, 0, 0);
+                rgb_matrix_set_color(131, 255, 0, 0);
+                rgb_matrix_set_color(134, 255, 0, 0);
+                rgb_matrix_set_color(145, 255, 0, 0);
+                rgb_matrix_set_color(132, 255, 0, 0);
+*/
